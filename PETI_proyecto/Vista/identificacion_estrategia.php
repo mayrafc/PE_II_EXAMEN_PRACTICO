@@ -114,224 +114,807 @@ if (!isset($_SESSION['user_id'])) {
                 </table>
 
                 <!-- Matriz 1: Fortalezas vs Oportunidades -->
-                <div class="matrix-section">
-                    <div class="matrix-title">Las fortalezas se usan para tomar ventaja en cada una las oportunidades.</div>
-                    <div class="matrix-subtitle">0=En total desacuerdo, 1= No está de acuerdo, 2= Está de acuerdo, 3= Bastante de acuerdo y 4=En total acuerdo.</div>
-                    
-                    <table class="small-matrix">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th class="header-oportunidades">O1</th>
-                                <th class="header-oportunidades">O2</th>
-                                <th class="header-oportunidades">O3</th>
-                                <th class="header-oportunidades">O4</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="row-fortalezas">
-                                <td class="label-cell">F1</td>
-                                <td>1</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr class="row-fortalezas">
-                                <td class="label-cell">F2</td>
-                                <td></td>
-                                <td>2</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr class="row-fortalezas">
-                                <td class="label-cell">F3</td>
-                                <td>0</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr class="row-fortalezas">
-                                <td class="label-cell">F4</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr class="total-row">
-                                <td class="label-cell">Total</td>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                   <div class="matrix-section">
+                        <div class="instructions">
+                            <strong>Instrucciones:</strong> Selecciona el nivel de acuerdo para cada intersección entre Fortalezas y Oportunidades.
+                        </div>
+                        
+                        <div class="matrix-title">Las fortalezas se usan para tomar ventaja en cada una las oportunidades.</div>
+                        <div class="matrix-subtitle">0=En total desacuerdo, 1= No está de acuerdo, 2= Está de acuerdo, 3= Bastante de acuerdo y 4=En total acuerdo.</div>
+                        
+                        <table class="small-matrix">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th class="header-oportunidades">O1</th>
+                                    <th class="header-oportunidades">O2</th>
+                                    <th class="header-oportunidades">O3</th>
+                                    <th class="header-oportunidades">O4</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="row-fortalezas">
+                                    <td class="label-cell">F1</td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="">--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1" >1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="row-fortalezas">
+                                    <td class="label-cell">F2</td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="">--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2" >2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="row-fortalezas">
+                                    <td class="label-cell">F3</td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="">--</option>
+                                            <option value="0" >0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="row-fortalezas">
+                                    <td class="label-cell">F4</td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td class="label-cell">Total</td>
+                                    <td class="total-cell" id="total-o1">1</td>
+                                    <td class="total-cell" id="total-o2">2</td>
+                                    <td class="total-cell" id="total-o3">0</td>
+                                    <td class="total-cell" id="total-o4">0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-                <!-- Matriz 2: Fortalezas vs Amenazas -->
-                <div class="matrix-section">
-                    <div class="matrix-title">Las fortalezas evaden el efecto negativo de las amenazas.</div>
-                    <div class="matrix-subtitle">0=En total desacuerdo, 1= No está de acuerdo, 2= Está de acuerdo, 3= Bastante de acuerdo y 4=En total acuerdo.</div>
-                    
-                    <table class="small-matrix">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th class="header-amenazas">A1</th>
-                                <th class="header-amenazas">A2</th>
-                                <th class="header-amenazas">A3</th>
-                                <th class="header-amenazas">A4</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="row-fortalezas">
-                                <td class="label-cell">F1</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr class="row-fortalezas">
-                                <td class="label-cell">F2</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr class="row-fortalezas">
-                                <td class="label-cell">F3</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr class="row-fortalezas">
-                                <td class="label-cell">F4</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr class="total-row">
-                                <td class="label-cell">Total</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <!-- Matriz 2: Debilidades vs Amenazas -->
+                    <div class="matrix-section">
 
-                <!-- Matriz 3: Debilidades vs Oportunidades -->
-                <div class="matrix-section">
-                    <div class="matrix-title">Superamos las debilidades tomando ventaja de las oportunidades</div>
-                    <div class="matrix-subtitle">0=En total desacuerdo, 1= No está de acuerdo, 2= Está de acuerdo, 3= Bastante de acuerdo y 4=En total acuerdo.</div>
-                    
-                    <table class="small-matrix">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th class="header-oportunidades">O1</th>
-                                <th class="header-oportunidades">O2</th>
-                                <th class="header-oportunidades">O3</th>
-                                <th class="header-oportunidades">O4</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="row-debilidades">
-                                <td class="label-cell">D1</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr class="row-debilidades">
-                                <td class="label-cell">D2</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr class="row-debilidades">
-                                <td class="label-cell">D3</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr class="row-debilidades">
-                                <td class="label-cell">D4</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr class="total-row">
-                                <td class="label-cell">Total</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                        
+                        <div class="matrix-title">Las fortalezas evaden el efecto negativo de  las amenazas.</div>
+                        
+                        <table class="small-matrix">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th class="header-oportunidades">A1</th>
+                                    <th class="header-oportunidades">A2</th>
+                                    <th class="header-oportunidades">A3</th>
+                                    <th class="header-oportunidades">A4</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="row-fortalezas">
+                                    <td class="label-cell">F1</td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="">--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1" >1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="row-fortalezas">
+                                    <td class="label-cell">F2</td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="">--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2" >2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="row-fortalezas">
+                                    <td class="label-cell">F3</td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="">--</option>
+                                            <option value="0" >0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="row-fortalezas">
+                                    <td class="label-cell">F4</td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td class="label-cell">Total</td>
+                                    <td class="total-cell" id="total-o1">1</td>
+                                    <td class="total-cell" id="total-o2">2</td>
+                                    <td class="total-cell" id="total-o3">0</td>
+                                    <td class="total-cell" id="total-o4">0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
+                <!-- Matriz 3: Debilidades vs Amenazas -->
+                    <div class="matrix-section">
+
+                        
+                        <div class="matrix-title">Superamos las debilidades tomando ventaja de las oportunidades</div>
+                        
+                        <table class="small-matrix">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th class="header-oportunidades">O1</th>
+                                    <th class="header-oportunidades">O2</th>
+                                    <th class="header-oportunidades">O3</th>
+                                    <th class="header-oportunidades">O4</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="row-fortalezas">
+                                    <td class="label-cell">D1</td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="">--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1" >1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="row-fortalezas">
+                                    <td class="label-cell">D2</td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="">--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2" >2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="row-fortalezas">
+                                    <td class="label-cell">D3</td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="">--</option>
+                                            <option value="0" >0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="row-fortalezas">
+                                    <td class="label-cell">D4</td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td class="label-cell">Total</td>
+                                    <td class="total-cell" id="total-o1">1</td>
+                                    <td class="total-cell" id="total-o2">2</td>
+                                    <td class="total-cell" id="total-o3">0</td>
+                                    <td class="total-cell" id="total-o4">0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
                 <!-- Matriz 4: Debilidades vs Amenazas -->
-                <div class="matrix-section">
-                    <div class="matrix-title">Las debilidades intensifican notablemente el efecto negativo de las amenazas.</div>
-                    <div class="matrix-subtitle">0=En total desacuerdo, 1= No está de acuerdo, 2= Está de acuerdo, 3= Bastante de acuerdo y 4=En total acuerdo.</div>
-                    
-                    <table class="small-matrix">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th class="header-amenazas">A1</th>
-                                <th class="header-amenazas">A2</th>
-                                <th class="header-amenazas">A3</th>
-                                <th class="header-amenazas">A4</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="row-debilidades">
-                                <td class="label-cell">D1</td>
-                                <td>5</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr class="row-debilidades">
-                                <td class="label-cell">D2</td>
-                                <td>2</td>
-                                <td>1</td>
-                                <td></td>
-                                <td>2</td>
-                            </tr>
-                            <tr class="row-debilidades">
-                                <td class="label-cell">D3</td>
-                                <td></td>
-                                <td></td>
-                                <td>1</td>
-                                <td></td>
-                            </tr>
-                            <tr class="row-debilidades">
-                                <td class="label-cell">D4</td>
-                                <td></td>
-                                <td>1</td>
-                                <td></td>
-                                <td>2</td>
-                            </tr>
-                            <tr class="total-row">
-                                <td class="label-cell">Total</td>
-                                <td>7</td>
-                                <td>2</td>
-                                <td>1</td>
-                                <td>4</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                    <div class="matrix-section">
+
+                        
+                        <div class="matrix-title">Las debilidades intensifican notablemente el efecto negativo de las amenazas</div>
+                        
+                        <table class="small-matrix">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th class="header-oportunidades">A1</th>
+                                    <th class="header-oportunidades">A2</th>
+                                    <th class="header-oportunidades">A3</th>
+                                    <th class="header-oportunidades">A4</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="row-fortalezas">
+                                    <td class="label-cell">D1</td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="">--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1" >1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="row-fortalezas">
+                                    <td class="label-cell">D2</td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="">--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2" >2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="row-fortalezas">
+                                    <td class="label-cell">D3</td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="">--</option>
+                                            <option value="0" >0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="row-fortalezas">
+                                    <td class="label-cell">D4</td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select onchange="updateTotals()">
+                                            <option value="" selected>--</option>
+                                            <option value="0">0 - En total desacuerdo</option>
+                                            <option value="1">1 - No está de acuerdo</option>
+                                            <option value="2">2 - Está de acuerdo</option>
+                                            <option value="3">3 - Bastante de acuerdo</option>
+                                            <option value="4">4 - En total acuerdo</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td class="label-cell">Total</td>
+                                    <td class="total-cell" id="total-o1">1</td>
+                                    <td class="total-cell" id="total-o2">2</td>
+                                    <td class="total-cell" id="total-o3">0</td>
+                                    <td class="total-cell" id="total-o4">0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                 <!-- Síntesis de Resultados -->
                 <div class="sintesis-section">
